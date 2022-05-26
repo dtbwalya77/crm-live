@@ -1,0 +1,1 @@
+web: gunicorn whatsonzambia.wsgi --log-file -
