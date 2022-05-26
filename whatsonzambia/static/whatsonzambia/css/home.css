@@ -1,0 +1,73 @@
+/* ==========================================================================
+     #PAGE WRAPPER
+     ========================================================================== */
+     .page-wrapper {
+      min-height: 100vh;
+    }
+    
+    body {
+      font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+      font-weight: 400;
+    }
+    
+    h1 {
+      font-size: 36px;
+    }
+    
+    h2 {
+      font-size: 30px;
+    }
+    
+    h3 {
+      font-size: 24px;
+    }
+    
+    h4 {
+      font-size: 18px;
+    }
+    
+    h5 {
+      font-size: 15px;
+    }
+    
+    h6 {
+      font-size: 13px;
+    }
+    
+    /* ==========================================================================
+       #BACKGROUND
+       ========================================================================== */
+    .bg-blue {
+      background: #2c6ed5;
+    }
+    
+    .bg-red {
+      background: #fa4251;
+    }
+    
+    .bg-gra-01 {
+      background: -webkit-gradient(linear, left bottom, left top, from(#fbc2eb), to(#a18cd1));
+      background: -webkit-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+      background: -moz-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+      background: -o-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+      background: linear-gradient(to top, #fbc2eb 0%, #a18cd1 100%);
+    }
+    
+    .bg-gra-02 {
+      background: -webkit-gradient(linear, left bottom, right top, from(#fc2c77), to(#6c4079));
+      background: -webkit-linear-gradient(bottom left, #fc2c77 0%, #6c4079 100%);
+      background: -moz-linear-gradient(bottom left, #fc2c77 0%, #6c4079 100%);
+      background: -o-linear-gradient(bottom left, #fc2c77 0%, #6c4079 100%);
+      background: linear-gradient(to top right, #fc2c77 0%, #6c4079 100%);
+    }
+
+    .p-t-60 {
+      padding-top: 60px;
+    }
+    

@@ -1,0 +1,60 @@
+{% extends "accounts/form_base.html" %}
+{% block content %}
+<h2 class="title">Registration</h2>
+<form method="POST">
+    {% csrf_token %}
+    <div class="row row-space">
+        <div class="col-12">
+            <div class="input-group">
+                <input class="form-control" type="email" Placeholder="Email Address" name="email" {% if form.is_bound %}value="{{ form.email.value }}{% endif %}">
+                {% for err in form.fullname.errors %}
+                <small class="text-danger ml-2">{{ err }}</small>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="input-group">
+                <input class="form-control" type="text" Placeholder="Fullname" name="fullname" {% if form.is_bound %}value="{{ form.fullname.value }}{% endif %}">
+                {% for err in form.email.errors %}
+                <small class="text-danger ml-2">{{ err }}</small>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="input-group">
+                <input class="form-control" type="text" Placeholder="Phone Number" name="contact" {% if form.is_bound %}value="{{ form.contact.value }}{% endif %}">
+                {% for err in form.contact.errors %}
+                <small class="text-danger ml-2">{{ err }}</small>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="input-group">
+                <input class="form-control" type="password" Placeholder="Password" name="password1">
+                {% for err in form.password1.errors %}
+                <small class="text-danger ml-2">{{ err }}</small>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="input-group">
+                <input class="form-control" type="password" Placeholder="Confirm Password" name="password2">
+                <div>
+                    {% for err in form.password2.errors %}
+                    <small class="text-danger ml-2">{{ err }}</small>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-t-15">
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+</form>
+<div class="boder-top pt-3">
+    <small class="text-muted">
+        Already have an account?<a class="ml-2" href="{% url 'login' %}"> Sign in</a>
+        <p><a class="" href="{% url 'whatsonzambia-home' %}">Home</a></p>
+    </small>
+</div>
+{% endblock content %}

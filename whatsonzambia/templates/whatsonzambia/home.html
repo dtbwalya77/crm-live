@@ -1,0 +1,29 @@
+{% extends "whatsonzambia/base.html" %}
+{% block content %}
+{% for post in posts %}      
+    <div class="card mb-8">
+      <a href="#!"><img class="card-img-top" src="{{ post.post_image.url }}" alt="..." /></a>
+      <div class="card-body text-center">
+        <h8 class="card-title h8"><strong>Date: </strong>{{ post.event_date }}<strong> | Time: </strong>{{ post.event_time }}</h8>
+        <h6 class="card-title h6"><u><strong>{{ post.event_day }}</strong></u></h6>
+        <h8 class="card-title h8"><strong>Venue: </strong>{{ post.venue }}<strong> | Town/City: </strong>{{ post.town }}</h8>
+        <h6 class="card-title h6"><strong>Charges: </strong>{{ post.charge }}</h6>
+        <a class="btn btn-primary" href="{% url 'post-detail' post.id %}">Read more →</a>
+      </div>
+    </div>
+  </div>
+<div class="col-lg-6">
+{% endfor %}
+<!-- Pagination -->
+<hr>
+<div>
+  {% if posts.has_previous %}
+    <a class="btn btn-primary" href="{% url 'whatsonzambia-home' %}?page={{ posts.previous_page_number }}">Previous Page</a>
+  {% endif %}
+  {% if posts.has_next %}
+    <a class="btn btn-primary" href="{% url 'whatsonzambia-home' %}?page={{ posts.next_page_number }}">Next Page</a>
+  {% endif %}
+  
+</div>
+
+{% endblock content %}
