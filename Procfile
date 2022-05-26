@@ -1,1 +1,1 @@
-web: gunicorn whatsonzambia.wsgi --log-file -
+web: gunicorn whatsonzambia_project.wsgi --log-file -
