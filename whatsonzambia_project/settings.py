@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import mimetypes
+import cloudinary
+import cloudinary_storage
 
 # Identify all static file types 
 mimetypes.add_type("text/css", ".css", True)
@@ -46,7 +48,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'whatsonzambia'
+    'whatsonzambia',
+    # Media Cloudinary
+    'cloudinary',
+    'cloudinary_storage'
 ]
 AUTH_USER_MODEL = 'whatsonzambia.CustomUser'
 
@@ -128,6 +133,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
+
+# Cloudinary stuff
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dtbwalya77',
+    'API_KEY': '741478315681629',
+    'API_SECRET': '03mgHPH9ISiIlPQWfVDQoi-FMLY',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_URL = '/static/'
 
